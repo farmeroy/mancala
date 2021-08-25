@@ -11,39 +11,40 @@ const defaultGameState = {
 const gameReducer = (state, action) => {
   if (action.type === "MOVE") {
     // const stones = state[`row${action.row}[${action.pit}]`];
-    const currBoardState = { ...state };
-    console.log(currBoardState);
-    console.log(action);
+    let homePits = [state.homePit1, state.homePit2]
+    let rows = [[...state.row1], [...state.row2]];
     let row = +action.row;
     const player = +action.row;
     // console.log(player);
     let pit = action.pit;
     let points = 0;
-    let stones = currBoardState[`row${row}`][pit];
-    currBoardState[`row${row}`][pit] = 0;
+    let stones = rows[row-1][pit];
+    rows[row-1][pit] = 0;
     for (let i = stones; i > 0; i--) {
       if (pit + 1 < 6) {
         pit++;
-        currBoardState[`row${row}`][pit]++;
+        rows[row-1][pit]++;
         continue;
       } else if (player === row) {
         // console.log(currBoardState[`homePit${player}`]);
         console.log(player);
-        points++;
+        homePits[player-1]++
         player === 1 ? (row = 2) : (row = 1);
         pit = -1;
         continue;
       } else if (player !== row) {
         player === 1 ? (row = 1) : (row = 2);
-        currBoardState[`row${row}`][0]++;
+        rows[row-1][0]++;
         pit = 0;
         continue;
       }
     }
-    let updatedState = { ...currBoardState };
-    updatedState[`homePit${player}`] += points;
-    console.log(updatedState);
-    return { ...updatedState };
+    return { 
+      homePit1: homePits[0],
+      homePit2: homePits[1],
+      row1: [...rows[0]],
+      row2: [...rows[1]]
+    };
   }
 
   // return defaultGameState;
