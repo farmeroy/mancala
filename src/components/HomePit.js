@@ -1,20 +1,18 @@
-import React, { useContext } from "react";
-import GameContext from "../Store/game-context";
+import React from "react";
 import styles from "./HomePit.module.css";
 import Stone from "./Stone.js";
 
 function HomePit(props) {
-    const gameCtx = useContext(GameContext);
-    
-    // let stonesEl = [];
-    // for(let i = gameCtx[`homePit${props.player}`]; i > 0; i--) {
-    //     stonesEl.push(
-    //         <Stone key={`HomePit-${i}`}/>
-    //     )
-    // };
+   
+    let stonesEl = [];
+    for(let i = props.stones; i > 0; i--) {
+        stonesEl.push(
+            <Stone key={`HomePit-${i}`}/>
+        )
+    };
   return (
     <div key={props.player} className={styles.pit}>
-      {gameCtx[props.player]}
+      {stonesEl}
     </div>
   );
 }

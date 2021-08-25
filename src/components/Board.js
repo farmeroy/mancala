@@ -11,12 +11,12 @@ function Board() {
   return (
     <div className={styles.board}>
         <div className={styles.field}>
-      <HomePit key={1} player={'homePit1'} />
+      <HomePit key={1} stones={gameCtx.homePit1} />
       <section>
         <Row stones={gameCtx.row1} row={1} />
         <Row stones={gameCtx.row2} row={2}/>
       </section>
-      <HomePit key={2} player={'homePit2'}/>
+      <HomePit key={2} stones={gameCtx.homePit2}/>
 
         </div>
     </div>
