@@ -6,6 +6,7 @@ const defaultGameState = {
   homePit2: 0,
   row1: [4, 4, 4, 4, 4, 4],
   row2: [4, 4, 4, 4, 4, 4],
+  playerTurn: 1
 };
 
 // the gameReducer contains all the game's logic
@@ -14,7 +15,7 @@ const gameReducer = (state, action) => {
     let homePits = [state.homePit1, state.homePit2];
     let rows = [[...state.row1], [...state.row2]];
     let row = +action.row;
-    const player = +action.row;
+    let player = +action.row;
     let enemyRow;
     // determine the index of the enemy's row
     player === 1 ? (enemyRow = 1) : (enemyRow = 0);
@@ -57,6 +58,10 @@ const gameReducer = (state, action) => {
         player === 1 ? (row = 2) : (row = 1);
         // make sure the next pit increment equals zero
         pit = -1;
+        // if the player lands their last stone in their homepit
+        if (i === 1) {
+          player = row;
+        }
         continue;
       } else if (player !== row) {
         //if it's not the player's row, skip the home pit and switch rows
@@ -71,6 +76,7 @@ const gameReducer = (state, action) => {
       homePit2: homePits[1],
       row1: [...rows[0]],
       row2: [...rows[1]],
+      playerTurn: player === 1 ? 2 : 1
     };
   }
   if (action.type === "NEW_GAME") {
@@ -105,6 +111,7 @@ const GameProvider = (props) => {
     homePit2: gameState.homePit2,
     row1: gameState.row1,
     row2: gameState.row2,
+    playerTurn: gameState.playerTurn,
     moveStone: moveStoneHandler,
     newGame: newGameHandler
   };

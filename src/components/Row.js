@@ -10,13 +10,13 @@ function Row(props) {
     }
 
     const pits = props.stones.map((pit, index) => (
-     <Pit stones={pit} key={index} id={{row: props.row, pit: index}} onMove={moveStoneHandler}/>
+     <Pit stones={pit} key={index} id={{row: props.row, pit: index}} isValid={props.playerTurn} onMove={moveStoneHandler}/>
     ));
 
     // reverse the row one flex-direction to ensure propper game flow
     const classes = `${styles.row} ${props.row === 1 ? styles.reverse : ''}`
     return (
-      <div className={classes} id={props.row}>
+      <div className={classes} id={props.row} >
         {pits}
       </div>
     );

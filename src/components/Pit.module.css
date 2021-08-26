@@ -18,6 +18,10 @@
     cursor: pointer;
 }
 
+.pit:disabled {
+    background-color: rgb(219, 165, 126);
+}
+
 @media (max-width: 768px) {
     .pit{
        max-width: 400px;

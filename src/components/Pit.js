@@ -8,8 +8,10 @@ function Pit(props) {
   for (let i = props.stones; i > 0; i--) {
     stones.push(<Stone key={`Pit-${i}`} />);
   }
+
+  
   return (
-    <button className={styles.pit} onClick={props.onMove.bind(null, props.id)}>
+    <button className={styles.pit} disabled={!props.isValid} onClick={props.onMove.bind(null, props.id)}>
       {stones}
     </button>
   );
