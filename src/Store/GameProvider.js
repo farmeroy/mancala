@@ -6,7 +6,8 @@ const defaultGameState = {
   homePit2: 0,
   row1: [4, 4, 4, 4, 4, 4],
   row2: [4, 4, 4, 4, 4, 4],
-  playerTurn: 1
+  playerTurn: 1,
+  gameOver: false
 };
 
 // the gameReducer contains all the game's logic
@@ -84,6 +85,19 @@ const gameReducer = (state, action) => {
     return defaultGameState;
   }
 
+  if(action.type === "END_GAME") {
+    const currHomePit1 = +state.homePit1;
+    const currHomePit2 = +state.homePit2;
+    return ({
+      homePit1: currHomePit1 + action.total1,
+      homePit2: currHomePit2 + action.total2,
+      row1: [0,0,0,0,0,0],
+      row2: [0,0,0,0,0,0],
+      //set gameOver to true in order to prevent an infinite loop
+      gameOver: true
+    });
+  }
+
 };
 
 const GameProvider = (props) => {
@@ -100,10 +114,21 @@ const GameProvider = (props) => {
     });
   };
 
-  const newGameHandler = () => {
+  const newGameHandler = (total1, total2) => {
     dispatchGameAction({
-      type: "NEW_GAME"
+      type: "NEW_GAME",
+      total1: total1,
+      total2: total2
     })
+  };
+
+  const endGameHandler = (total1, total2) => {
+    dispatchGameAction({
+      type: "END_GAME",
+      total1: total1,
+      total2: total2
+    })
+
   }
 
   const gameContext = {
@@ -112,8 +137,10 @@ const GameProvider = (props) => {
     row1: gameState.row1,
     row2: gameState.row2,
     playerTurn: gameState.playerTurn,
+    gameOver: gameState.gameOver,
     moveStone: moveStoneHandler,
-    newGame: newGameHandler
+    newGame: newGameHandler,
+    endGame: endGameHandler
   };
   return (
     <GameContext.Provider value={gameContext}>

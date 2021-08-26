@@ -7,7 +7,9 @@ function Row(props) {
     const gameCtx = useContext(GameContext);
     const moveStoneHandler = (id)=> {
       gameCtx.moveStone(id);
-    }
+    };
+
+    
 
     const pits = props.stones.map((pit, index) => (
      <Pit stones={pit} key={index} id={{row: props.row, pit: index}} isValid={props.playerTurn} onMove={moveStoneHandler}/>

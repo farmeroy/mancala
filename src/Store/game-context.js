@@ -7,8 +7,10 @@ const GameContext = React.createContext({
         row1: [4, 4, 4, 4, 4, 4],
         row2: [4, 4, 4, 4, 4, 4],
         playerTurn: 1,
+        gameOver: false,
         moveStone: (id) => {},
-        newGame: () => {}
+        newGame: () => {},
+        endGame: (total1, total2) => {}
 });
 
 export default GameContext;

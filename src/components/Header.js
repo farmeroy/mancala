@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <h2>Mancala</h2>
-      <button onClick={newGameHandler}>New Game</button>
+      <button onClick={newGameHandler}>Start Over</button>
     </header>
   );
 };
