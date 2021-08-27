@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mancala/static/css/main.bef223f7.chunk.css",
+    "main.js": "/mancala/static/js/main.e8142bee.chunk.js",
+    "main.js.map": "/mancala/static/js/main.e8142bee.chunk.js.map",
+    "runtime-main.js": "/mancala/static/js/runtime-main.83109708.js",
+    "runtime-main.js.map": "/mancala/static/js/runtime-main.83109708.js.map",
+    "static/js/2.4017564d.chunk.js": "/mancala/static/js/2.4017564d.chunk.js",
+    "static/js/2.4017564d.chunk.js.map": "/mancala/static/js/2.4017564d.chunk.js.map",
+    "static/js/3.5f84b001.chunk.js": "/mancala/static/js/3.5f84b001.chunk.js",
+    "static/js/3.5f84b001.chunk.js.map": "/mancala/static/js/3.5f84b001.chunk.js.map",
+    "index.html": "/mancala/index.html",
+    "static/css/main.bef223f7.chunk.css.map": "/mancala/static/css/main.bef223f7.chunk.css.map",
+    "static/js/2.4017564d.chunk.js.LICENSE.txt": "/mancala/static/js/2.4017564d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83109708.js",
+    "static/js/2.4017564d.chunk.js",
+    "static/css/main.bef223f7.chunk.css",
+    "static/js/main.e8142bee.chunk.js"
+  ]
+}
