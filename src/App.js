@@ -1,8 +1,8 @@
 
-import Board from './components/Board';
+import Board from './components/GameBoard/Board';
 import './App.css';
 import GameProvider from './Store/GameProvider';
-import Header from './components/Header';
+import Header from './components/GameBoard/Header';
 
 function App() {
 

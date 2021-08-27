@@ -1,7 +1,8 @@
 .board {
     display: flex;
-    width: auto;
-    margin: 2rem;
+    height: 100%;
+    width: 90%;
+    margin: 5vw;
     background-color: rgb(247, 197, 91);
     justify-content: space-around;
     padding: 1rem;
@@ -14,19 +15,20 @@
 
 .field {
     display: inline-flex;
+    height: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     .board{
         display: block;
-        /* flex-direction: column; */
-            max-width: 450px;
+        
+        max-width: 450px;
         align-items: center;
 
     }
    .board section {
        display: flex;
-       flex-direction: row;
+       flex-direction: row-reverse;
        justify-content: space-around;
    }
     .field {

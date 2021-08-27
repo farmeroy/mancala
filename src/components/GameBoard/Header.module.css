@@ -1,4 +1,12 @@
-.game-over button {
+.header {
+    color: white;
+    display: inline;  
+    text-align: center;
+    justify-content:  space-around;
+    width: 100vw;
+}
+
+.header button {
     font-weight: bold;
     color: rgb(104, 34, 34);
     height: 2rem;
@@ -10,7 +18,14 @@
     margin: 10px;
 }
 
-.game-over button:hover {
+.header button:hover {
     cursor: pointer;
     background-color: chocolate;
+}
+
+@media (max-width: 720px) {
+    .header{
+        display: flex;
+    }
+
 }

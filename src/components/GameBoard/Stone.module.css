@@ -1,12 +1,12 @@
 .stone {
-    max-width: 45%;
-    max-height: 45%;
+    /* max-width: 45%;
+    max-height: 45%; */
     border: 1px solid black;
     background-color: brown;
     border-radius: 35px;
     padding: 2px;
-    width: .7rem;
-    height: .7rem ;
+    width: 1.5vw;
+    height: 1.5vw ;
     margin: 2px;
 
   animation: bump 600ms ease-out;
@@ -30,5 +30,12 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 720px) {
+  .stone {
+    width: 1.5vh;
+    height: 1.5vh;
   }
 }

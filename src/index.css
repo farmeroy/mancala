@@ -11,3 +11,8 @@ body {
   background-color: #3f3f3f;
 }
 
+#modal-root {
+  display: flex;
+  justify-content: center;
+}
+

@@ -11,8 +11,11 @@ function HomePit(props) {
         )
     };
   return (
+    <div className={styles.borderbox}>
     <div key={props.player} className={styles.pit}>
       {stonesEl}
+    </div>
+
     </div>
   );
 }

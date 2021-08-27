@@ -7,7 +7,7 @@
     flex-direction: row-reverse;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     .row{
         display: flex;
         /* flex-wrap: row-wrap; */

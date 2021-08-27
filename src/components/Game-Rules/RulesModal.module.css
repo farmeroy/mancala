@@ -1,4 +1,13 @@
-.game-over button {
+.rules {
+    padding: 1rem;
+   
+}
+
+.rules h2 {
+    color: rgb(104, 34, 34);
+}
+
+.rules button {
     font-weight: bold;
     color: rgb(104, 34, 34);
     height: 2rem;
@@ -10,7 +19,7 @@
     margin: 10px;
 }
 
-.game-over button:hover {
+.rules button:hover {
     cursor: pointer;
     background-color: chocolate;
 }

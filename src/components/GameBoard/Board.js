@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import HomePit from "./HomePit";
 import Row from "./Row";
 import styles from "./Board.module.css";
-import GameContext from "../Store/game-context";
-import GameOverModal from "./Game-Over/GameOverModal";
+import GameContext from "../../Store/game-context";
+import GameOverModal from "../Game-Over/GameOverModal";
 
 function Board() {
   const gameCtx = useContext(GameContext);
